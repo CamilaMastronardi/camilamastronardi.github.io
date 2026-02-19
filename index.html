@@ -1,55 +1,113 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camila Mastronardi | Academic Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
+    <header id="home">
         <h1>Camila Mastronardi</h1>
-        <p>PhD Student | Researcher</p>
+        <p>PhD Candidate | Researcher</p>
+        <p>Short description of your research focus goes here.</p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+
+            <li class="dropdown">
+                <a href="#">Experience ▾</a>
+                <ul class="submenu">
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#internships">Internships</a></li>
+                    <li><a href="#sciencecom">Science Communication</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my academic webpage. I am a PhD student working on research related to my doctoral thesis.
-            Here you can find information about my research interests, academic projects, and publications.
-        </p>
-    </section>
-
+    <!-- Research Section -->
     <section id="research">
         <h2>Research</h2>
+        <h3>Doctoral Research</h3>
+        <p>
+            Brief description of your PhD project. Explain the main problem,
+            research questions, and methodology.
+        </p>
+
+        <h3>Research Interests</h3>
         <ul>
-            <li>Research Topic 1</li>
-            <li>Research Topic 2</li>
-            <li>Research Topic 3</li>
+            <li>Research Interest 1</li>
+            <li>Research Interest 2</li>
+            <li>Research Interest 3</li>
         </ul>
     </section>
 
-    <section id="projects">
-        <h2>Academic Projects</h2>
+    <!-- Internships Section -->
+    <section id="internships">
+        <h2>Internships</h2>
+
         <div class="project">
-            <h3>Project Title</h3>
-            <p>Short description of the project.</p>
+            <h3>Laboratory Name – Institution</h3>
+            <p><strong>Year</strong></p>
+            <p>
+                Description of your role, techniques used, and main contributions.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Another Laboratory – Institution</h3>
+            <p><strong>Year</strong></p>
+            <p>
+                Description of your responsibilities and skills developed.
+            </p>
         </div>
     </section>
 
+    <!-- Science Communication Section -->
+    <section id="sciencecom">
+        <h2>Science Communication</h2>
+
+        <div class="project">
+            <h3>Event / Talk Title</h3>
+            <p><strong>Year – Location</strong></p>
+            <p>
+                Description of the outreach activity or communication project.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education & Courses</h2>
+
+        <h3>Education</h3>
+        <ul>
+            <li>PhD in [Field] – University – Year–Present</li>
+            <li>BSc / MSc in [Field] – University – Year</li>
+        </ul>
+
+        <h3>Selected Coursework</h3>
+        <ul>
+            <li>Advanced Course 1</li>
+            <li>Advanced Course 2</li>
+            <li>Workshop / Certification</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: your.email@university.edu</p>
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+        <p>GitHub: github.com/yourprofile</p>
     </section>
 
     <footer>
