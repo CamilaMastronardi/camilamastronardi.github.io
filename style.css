@@ -96,6 +96,11 @@ nav {
     display: block;
 }
 
+.dropdown-menu {
+  width: auto;
+  left: 0;
+}
+
 /* ===== SECTIONS ===== */
 section {
     max-width: 900px;
