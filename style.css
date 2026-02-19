@@ -76,14 +76,22 @@ nav {
     background: #1f2937;
     list-style: none;
     min-width: 220px;
+    padding: 0;
+    margin: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+.submenu li {
+    width: 100%;
+}
+
 .submenu li a {
+    display: block;
     padding: 0.8rem 1rem;
 }
 
-.dropdown:hover .submenu {
+/* Show only when hovering the parent li */
+.dropdown:hover > .submenu {
     display: block;
 }
 
