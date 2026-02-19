@@ -150,6 +150,16 @@ footer {
     }
 
     .submenu {
+        position: absolute;
+        display: none;
+    }
+
+    .dropdown:hover .submenu {
+        display: block;
+    }
+}
+
+    .submenu {
         position: static;
         box-shadow: none;
     }
@@ -157,4 +167,3 @@ footer {
     .dropdown:hover .submenu {
         display: block;
     }
-}
