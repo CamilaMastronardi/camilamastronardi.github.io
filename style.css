@@ -51,6 +51,7 @@ nav {
 
 .menu > li {
     position: relative;
+    display: inline-block; 
 }
 
 .menu a {
