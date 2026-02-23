@@ -52,7 +52,7 @@ nav {
 }
 
 .nav-link.active {
-    color: #60a5fa;
+    color: #559f9f;
 }
 
 .nav-link.active::after {
@@ -79,7 +79,7 @@ nav {
     bottom: -4px;
     width: 0%;
     height: 2px;
-    background: #60a5fa;
+    background: #559f9f;
     transition: width 0.3s ease;
 }
 
@@ -96,7 +96,7 @@ nav {
 }
 
 .menu a:hover {
-    color: #60a5fa;
+    color: #559f9f;
 }
 
 
