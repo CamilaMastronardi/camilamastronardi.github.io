@@ -40,7 +40,12 @@ nav {
     position: sticky;
     top: 0;
     background: #1f2937;
+    height: 59px;
     z-index: 1000;
+}
+
+.nav-link {
+    transition: transform 1s ease;
 }
 
 .menu {
@@ -52,6 +57,7 @@ nav {
 .menu > li {
     position: relative;
     display: inline-block; 
+
 }
 
 .menu a {
@@ -61,11 +67,24 @@ nav {
     text-decoration: none;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
-    transition: background 0.3s ease;
+    transition: 1s ease;
 }
 
 .menu a:hover {
     background: #374151;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  display: none;
+}
+
+.dropdown:hover > .submenu {
+    display: block;
 }
 
 /* ===== DROPDOWN ===== */
@@ -80,6 +99,7 @@ nav {
     padding: 0;
     margin: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 1s ease;
 }
 
 .submenu li {
@@ -89,6 +109,7 @@ nav {
 .submenu li a {
     display: block;
     padding: 0.8rem 1rem;
+    width:100%;
 }
 
 /* Show only when hovering the parent li */
@@ -96,9 +117,8 @@ nav {
     display: block;
 }
 
-.dropdown-menu {
-  width: auto;
-  left: 0;
+#experience{
+    width: 20%;
 }
 
 /* ===== SECTIONS ===== */
