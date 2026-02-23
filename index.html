@@ -155,6 +155,18 @@ hamburger.addEventListener("click", () => {
 experienceLink.addEventListener("click", (e) => {e.preventDefault();
     submenu.classList.toggle("active");
 })
+document.addEventListener("click", (e) => {
+
+    const clickedInsideMenu = menu.contains(e.target);
+    const clickedHamburger = hamburger.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedHamburger) {
+        menu.classList.remove("active");
+        hamburger.classList.remove("active");
+        submenu.classList.remove("active");
+    }
+});
+</script>
 </script>
 
 </body>
