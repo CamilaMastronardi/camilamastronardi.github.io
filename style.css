@@ -40,80 +40,59 @@ nav {
     position: sticky;
     top: 0;
     background: #1f2937;
-    height: 59px;
+    padding: 15px 0;
     z-index: 1000;
-}
-
-.nav-link {
-    transition: transform 1s ease;
 }
 
 .menu {
     display: flex;
     justify-content: center;
     list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
 }
 
-.menu > li {
+.menu li {
     position: relative;
-    display: inline-block; 
-
 }
 
 .menu a {
-    display: block;
-    padding: 1rem 1.5rem;
     color: white;
     text-decoration: none;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    transition: 1s ease;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .menu a:hover {
-    background: #374151;
+    color: #60a5fa;
 }
 
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: auto;
-  display: none;
-}
-
-.dropdown:hover > .submenu {
-    display: block;
-}
 
 /* ===== DROPDOWN ===== */
+
 .submenu {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #1f2937;
+    background: #2d3748;
+    padding: 10px 0;
     list-style: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 1s ease;
+    display: none;
+    min-width: 200px;
+    border-radius: 6px;
 }
 
 .submenu li {
-    width: 100%;
+    padding: 8px 20px;
 }
 
 .submenu li a {
     display: block;
-    padding: 0.8rem 1rem;
-    width:100%;
+    width: 100%;
 }
 
-/* Show only when hovering the parent li */
-.dropdown:hover > .submenu {
+.dropdown:hover .submenu {
     display: block;
 }
 
@@ -171,28 +150,133 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== HAMBURGER ===== */
+.hamburger {
+display: none;
+    position: fixed;     /* 👈 clave */
+    top: 20px;           /* altura respecto a la pantalla */
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    background: #374151;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3000;       /* 👈 por encima de todo */
+    transition: all 0.3s ease;
+}
+
+/* Lines */
+.hamburger span {
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Top line */
+.hamburger span:nth-child(1) {
+    transform: translateY(-6px);
+}
+
+/* Middle line */
+.hamburger span:nth-child(2) {
+    transform: translateY(0);
+}
+
+/* Bottom line */
+.hamburger span:nth-child(3) {
+    transform: translateY(6px);
+}
+
+/* ACTIVE (turns into X) */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* ========================= */
+/* MOBILE VERSION */
+/* ========================= */
+
 @media (max-width: 768px) {
-    .menu {
+
+    nav {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        position: relative;
+        padding: 0 0;
     }
 
-    .submenu {
-        position: absolute;
+    .hamburger {
+        display: flex;
+        margin-left: 0px;
+        margin-bottom: 20px;  /* espacio debajo */
+    }
+
+    .menu {
+        position: fixed;          /* 👈 ahora flota */
+        top: 80px;                /* 👈 debajo de la hamburguesa */
+        left: 20px;
+
+        width: 220px;             /* tamaño tipo panel */
+        flex-direction: column;
+        gap: 20px;
+
+        background: #1f2937;
+        padding: 25px;
+        border-radius: 12px;
+
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+
+        transition: all 0.35s ease;
+        z-index: 2500;            /* debajo del botón pero sobre todo */
+    }
+
+    .menu.active {  
+        opacity: 1;
+        max-height: 500px;
+        padding-bottom: 20px;
+        padding-left: 60px;
+    }
+
+     /* desactiva hover en mobile */
+    .dropdown:hover .submenu {
         display: none;
     }
 
-    .dropdown:hover .submenu {
-        display: block;
+    .submenu:hover {
+        display: none;
     }
-}
-
     .submenu {
-        position: static;
-        box-shadow: none;
+        position: relative;
+        display: block;
+        background: #374151;
+        margin-top: 10px;
+        padding-left: 10px;
+        border-radius: 6px;
     }
 
     .dropdown:hover .submenu {
-        display: block;
-    }
+    display: block;
+}
+}

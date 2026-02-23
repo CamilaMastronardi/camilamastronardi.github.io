@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camila Mastronardi | Academic Website</title>
+    <meta name="description" content="Camila Mastronardi - PhD Candidate and Researcher. Academic website including research, education, and science communication.">
+    <meta name="author" content="Camila Mastronardi">
+    <meta name="keywords" content="Camila Mastronardi, PhD, Researcher, Science Communication, Academic Website">
+    <title>Camila Mastronardi | PhD Candidate & Researcher</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,24 +17,29 @@
         <p>Short description of your research focus goes here.</p>
     </header>
 
-    <nav>
-        <ul class="menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
+<nav>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-            <li class="dropdown">
-                <a href="#experience" class="nav-link" id="experience">Experience ▾</a>
-                <ul class="submenu">
-                    <li><a href="#research" class="nav-link">Research</a></li>
-                    <li><a href="#internships" class="nav-link">Internships</a></li>
-                    <li><a href="#sciencecom" class="nav-link">Science <br> Communication</a></li>
-                </ul>
-            </li>
+    <ul class="menu" id="menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
 
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
+        <li class="dropdown">
+            <a href="#experience" class="nav-link">Experience ▾</a>
+            <ul class="submenu">
+                <li><a href="#research">Research</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#sciencecom">Science Communication</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+</nav>
 
     <!-- Research Section -->
     <section id="research">
@@ -131,6 +139,16 @@
     <footer>
         <p>© 2026 Camila Mastronardi</p>
     </footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    menu.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>
