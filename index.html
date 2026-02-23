@@ -37,6 +37,7 @@
         </li>
 
         <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 </nav>
@@ -143,11 +144,17 @@
 <script>
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
+const experienceLink = document.querySelector('.dropdown > a');
+const submenu = document.querySelector('.submenu');
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     menu.classList.toggle("active");
 });
+
+experienceLink.addEventListener("click", (e) => {e.preventDefault();
+    submenu.classList.toggle("active");
+})
 </script>
 
 </body>

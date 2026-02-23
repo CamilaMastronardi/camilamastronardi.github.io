@@ -83,6 +83,10 @@ nav {
     border-radius: 6px;
 }
 
+.submenu.active {
+    display: block;
+}
+
 .submenu li {
     padding: 8px 20px;
 }
@@ -90,10 +94,6 @@ nav {
 .submenu li a {
     display: block;
     width: 100%;
-}
-
-.dropdown:hover .submenu {
-    display: block;
 }
 
 /* ===== SECTIONS ===== */
@@ -259,24 +259,15 @@ display: none;
         padding-left: 60px;
     }
 
-     /* desactiva hover en mobile */
-    .dropdown:hover .submenu {
-        display: none;
-    }
-
     .submenu:hover {
-        display: none;
+        display: block;
     }
     .submenu {
         position: relative;
-        display: block;
+        display: none;
         background: #374151;
         margin-top: 10px;
         padding-left: 10px;
         border-radius: 6px;
     }
-
-    .dropdown:hover .submenu {
-    display: block;
-}
 }
