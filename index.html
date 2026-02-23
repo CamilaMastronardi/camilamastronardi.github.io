@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Camila Mastronardi - PhD Candidate and Researcher. Academic website including research, education, and science communication.">
@@ -26,7 +27,7 @@
 
     <ul class="menu" id="menu">
         <li><a href="#home" class="nav-link">Home</a></li>
-
+        <li><a href="#education" class="nav-link">Education</a></li>
         <li class="dropdown">
             <a href="#experience" class="nav-link">Experience ▾</a>
             <ul class="submenu">
@@ -36,12 +37,27 @@
             </ul>
         </li>
 
-        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 </nav>
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education & Courses</h2>
 
+        <h3>Education</h3>
+        <ul>
+            <li>PhD in [Field] – University – Year–Present</li>
+            <li>BSc / MSc in [Field] – University – Year</li>
+        </ul>
+
+        <h3>Selected Coursework</h3>
+        <ul>
+            <li>Advanced Course 1</li>
+            <li>Advanced Course 2</li>
+            <li>Workshop / Certification</li>
+        </ul>
+    </section>
     <!-- Research Section -->
     <section id="research">
         <h2>Research</h2>
@@ -94,24 +110,6 @@
 
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education & Courses</h2>
-
-        <h3>Education</h3>
-        <ul>
-            <li>PhD in [Field] – University – Year–Present</li>
-            <li>BSc / MSc in [Field] – University – Year</li>
-        </ul>
-
-        <h3>Selected Coursework</h3>
-        <ul>
-            <li>Advanced Course 1</li>
-            <li>Advanced Course 2</li>
-            <li>Workshop / Certification</li>
-        </ul>
-    </section>
-
  <section id="projects">
         <h2>Projects</h2>
 
@@ -146,6 +144,8 @@ const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 const experienceLink = document.querySelector('.dropdown > a');
 const submenu = document.querySelector('.submenu');
+const sections = document.querySelectorAll("section, header");
+const navLinks = document.querySelectorAll(".nav-link");
 
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
@@ -166,8 +166,60 @@ document.addEventListener("click", (e) => {
         submenu.classList.remove("active");
     }
 });
-</script>
+
+function activateLink() {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section.id;
+        }
+    });
+
+    navLinks.forEach(link => link.classList.remove("active"));
+
+    // Caso especial Experience
+    if (
+        currentSection === "research" ||
+        currentSection === "internships" ||
+        currentSection === "sciencecom"
+    ) {
+        document
+            .querySelector('.nav-link[href="#experience"]')
+            ?.classList.add("active");
+    } else {
+        document
+            .querySelector(`.nav-link[href="#${currentSection}"]`)
+            ?.classList.add("active");
+    }
+}
+
+window.addEventListener("scroll", activateLink);
+window.addEventListener("load", activateLink);
 </script>
 
+
 </body>
+
+@media (min-width: 769px) {
+
+    .menu li {
+        position: relative;
+    }
+
+    .menu li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: -20px;   /* ajusta según el gap */
+        top: 50%;
+        transform: translateY(-50%);
+        height: 18px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
 </html>
