@@ -14,8 +14,11 @@
 
     <header id="home">
         <h1>Camila Mastronardi</h1>
-        <p>PhD Candidate | Researcher</p>
-        <p>Short description of your research focus goes here.</p>
+    <div class="entry">
+        <div class="entry-header">
+            <h3> Data Scientist | PhD Student </h3>
+    </div>
+</div>
     </header>
 
 <nav>
@@ -41,21 +44,35 @@
         <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 </nav>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <img src="foto.jpeg" alt="Camila Mastronardi" class="profile-img">
+
+            <h2>About Me</h2>
+            <p><strong>Age:</strong> 26</p>
+            <p><strong>Location:</strong> Argentina</p>
+            <p><strong>Field:</strong> Space Physics</p>
+            <p><strong>Interests:</strong> Plasma physics, ML, science communication</p>
+        </aside>
+
+<main class="content">
+
     <!-- Education Section -->
     <section id="education">
         <h2>Education & Courses</h2>
 
         <h3>Education</h3>
         <ul>
-            <li>PhD in [Field] – University – Year–Present</li>
-            <li>BSc / MSc in [Field] – University – Year</li>
+            <li>PhD in Physics – University of Buenos Aires – 2026–Present</li>
+            <li>BSc / MSc in Physical Sciences – University of Buenos Aires – 2019-2025</li>
         </ul>
 
-        <h3>Selected Coursework</h3>
+        <h3>Courses</h3>
         <ul>
-            <li>Advanced Course 1</li>
-            <li>Advanced Course 2</li>
-            <li>Workshop / Certification</li>
+            <li>Full Stack Python Developer</li>
+            <li>Machine Learning for Scientific Data Analysis</li>
         </ul>
     </section>
     <!-- Research Section -->
@@ -63,15 +80,27 @@
         <h2>Research</h2>
         <h3>Doctoral Research</h3>
         <p>
-            Brief description of your PhD project. Explain the main problem,
-            research questions, and methodology.
+I started my PhD in Physics in 2026, focusing on the interaction between the solar wind and planetary environments, 
+with particular emphasis on Mars. My research combines space plasma physics, magnetohydrodynamics (MHD), 
+and machine learning techniques to analyze magnetic field data from space missions such as MAVEN.
+        </p>
+        <p>
+The project aims to develop data-driven methods to identify and characterize key plasma boundaries — 
+such as the Martian bow shock and magnetic pile-up boundary — and to understand their response to solar wind 
+variability. This work integrates physical modeling with advanced computational tools, including time-series 
+analysis and classification algorithms.
+</p><p>
+Beyond its scientific contribution to planetary space physics, the research strengthens expertise in data
+ analysis, signal processing, numerical modeling, and machine learning applied to complex real-world systems.
         </p>
 
         <h3>Research Interests</h3>
     <ul>
-            <li>Research Interest 1</li>
-            <li>Research Interest 2</li>
-            <li>Research Interest 3</li>
+    <li>Space Plasma Physics and Solar Wind–Planetary Interactions</li>
+
+    <li> MHD and Shock Physics </li>
+
+    <li>Machine Learning for Scientific Data Analysis</li>
         </ul>
     </section>
 
@@ -134,6 +163,8 @@
         <p>LinkedIn: linkedin.com/in/yourprofile</p>
         <p>GitHub: github.com/yourprofile</p>
     </section>
+</main>
+    </div>
 
     <footer>
         <p>© 2026 Camila Mastronardi</p>
@@ -204,7 +235,6 @@ function activateLink() {
     navLinks[navLinks.length - 1].classList.add("active");
     return;
   }
-
 }
 
 window.addEventListener("scroll", activateLink);
