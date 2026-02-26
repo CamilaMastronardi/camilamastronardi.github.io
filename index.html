@@ -170,6 +170,9 @@ document.addEventListener("click", (e) => {
 function activateLink() {
 
     let currentSection = "";
+    let scrollPosition = window.scrollY;
+    let windowHeight = window.innerHeight;
+    let documentHeight = document.body.scrollHeight;
 
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -195,10 +198,18 @@ function activateLink() {
             .querySelector(`.nav-link[href="#${currentSection}"]`)
             ?.classList.add("active");
     }
+
+    if (scrollPosition + windowHeight >= documentHeight - 5) {
+    navLinks.forEach(link => link.classList.remove("active"));
+    navLinks[navLinks.length - 1].classList.add("active");
+    return;
+  }
+
 }
 
 window.addEventListener("scroll", activateLink);
 window.addEventListener("load", activateLink);
+
 </script>
 
 
