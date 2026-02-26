@@ -57,6 +57,7 @@ header p:last-of-type {
     color: #e5e7eb;
 }
 
+
 /* ===== NAVIGATION ===== */
 nav {
     position: sticky;
@@ -87,33 +88,29 @@ nav {
     position: relative;
 }
 
-.menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #559f9f;
-    transition: width 0.3s ease;
-}
-
 .menu a:hover::after {
     width: 100%;
 }
 
 .menu a {
-    position: relative;
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
+/* Hover */
 .menu a:hover {
-    color: #559f9f;
+    background: rgba(255, 255, 255, 0.1);
 }
 
+/* ACTIVE STATE */
+.menu a.active {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+}
 
 /* ===== DROPDOWN ===== */
 
@@ -208,6 +205,22 @@ section ul {
 
 .content {
     flex: 1;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 6px 12px;
+    background: #111827;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.project-link:hover {
+    background: #374151;
 }
 
 /* ===== FOOTER ===== */
